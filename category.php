@@ -6,10 +6,10 @@
 
 				<div class="post">
 	
-
 	<?php
+	if (is_array($posts)) {
+	foreach($posts as $post){
 	
-		foreach($posts as $post){
 			/*if(!category_exists('name' , $post['name'])){
 				$post['name'] = 'Uncategorised';
 			}*/
@@ -30,6 +30,8 @@
 							</menu>
 				<?php } ?>	
 	<?php
+		} } else {
+			echo 'There is no post on this category';
 		}
 	?>
 	 
@@ -38,4 +40,4 @@
 	</div>
 	</div>
 	</div> 
- <?php  require_once('header.php'); ?>
+ <?php  require_once('footer.php'); ?>
