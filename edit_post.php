@@ -1,6 +1,6 @@
 <?php 
 	include_once ("resources/init.php");
-	$post = get_posts($_GET['id']);
+//	$post = get_posts($_GET['id']);
 	
 	
 	if(isset($_POST['title'],$_POST['contents'] , $_POST['category'])){
@@ -95,7 +95,7 @@
 									</select>
 								</div>
 	
-									<div><input type= "submit" name = "submit" value = "Add Post"></div>
+									<div><input type= "submit" name = "submit" value = "Edit Post"></div>
 						</form>
 				</div>
 			</div>

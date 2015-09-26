@@ -1,5 +1,5 @@
 <?php 
-include_once("resources/init.php");
+   require_once('header.php');
 
 	if (isset($_POST['name'])){ 		//checking this field is submitted.
 		$name = trim($_POST['name']); 	//there is actually a input.
@@ -21,13 +21,13 @@ include_once("resources/init.php");
 	}
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<?php
+if(isset($_SESSION['username'])) { ?>
+
 <title>Add a category</title>
 </head>
 <body>
-	<h1>Add a category</h1>
+	<h2 class="title"><a href="#">Add a category</a></h2><br>
 	<?php 
 	if( isset($error)){
 		echo "<p> {$error} </p>\n";
@@ -40,7 +40,6 @@ include_once("resources/init.php");
 	</div>
 	<div><input type= "submit" value = "Add Category"></div>
 </form>
-</body>
-
-
-</html>
+<?php } else { 
+header("Location: login.php");
+ } ?>

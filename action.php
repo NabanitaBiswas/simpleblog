@@ -52,6 +52,7 @@ if (isset($_POST['submit'])) {
             echo "Sorry, that user already exists. <br>";
             require_once('register.php');
         } else {
+            $pass1 = md5($pass1);
             mysql_query("INSERT INTO `users` (`id`,`uname`,`email`,`pass`) VALUES (NULL,'$uname','$email1','$pass1')");
             
             echo "Registered successfully";

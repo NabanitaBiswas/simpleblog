@@ -39,12 +39,14 @@ function delete($table,$id){	//function for deleting posts.
 	
 }
 
-function get_posts($id = null,$cat_id = null){
+function get_posts($id= null ,$cat_id = null){
 	$query = "SELECT `posts` . `id` AS `post_id` , `categories` . `id` AS `category_id` ,
 					 `title` , `contents` , `date_posted` , `categories` . `name`
 					 FROM `posts`
 					 INNER JOIN `categories` ON `categories` . `id` = `posts` . `cat_id`";
-	if(isset($id)){
+
+
+  	if(isset($id)){
 		 $id = (int)$id;
 		$query .= "WHERE `posts`.`id` = {$id}";
 	}
@@ -54,9 +56,9 @@ function get_posts($id = null,$cat_id = null){
 		$query .= "WHERE `cat_id` = {$cat_id}"; 
 	}
 			
-	$query .= "ORDER BY `posts` . `id` DESC";
-					 
-	$query = mysql_query($query);
+	$query .= " ORDER BY `posts` . `id` DESC";
+ 
+ 	$query = mysql_query($query);
 	
 	while($row = mysql_fetch_assoc($query)){
 	$posts[] = $row; 

@@ -1,4 +1,7 @@
-
+<?php 
+   require_once('header.php');
+?>
+		<h2 class="title"><a href="#">Register Here</a></h2><br>
   <form action = "action.php" method = "POST">
     
     Username: <input type = "text" name = "uname" /></br>
