@@ -1,5 +1,5 @@
 <?php
-include_once ("resources/init.php");
+require_once('header.php');
 
 if(isset($_POST['submit'])){
 	$uname = mysql_escape_string($_POST['uname']);

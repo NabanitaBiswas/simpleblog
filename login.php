@@ -17,3 +17,4 @@ Password: <input type ="password" name = "pass" /></br>
 <?php 
 
 } ?>
+Not an account<a href = "register.php">&nbsp;<button>Create an account</button></a>

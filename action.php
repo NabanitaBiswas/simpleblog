@@ -1,6 +1,6 @@
+
 <?php
-session_start();
-include_once("resources/init.php");
+   require_once('header.php');
 
 if (isset($_POST['submit'])) {
     
@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
             $pass1 = md5($pass1);
             mysql_query("INSERT INTO `users` (`id`,`uname`,`email`,`pass`) VALUES (NULL,'$uname','$email1','$pass1')");
             
-            echo "Registered successfully";
-            
+            echo 'Registered successfully. Please login here <br> <br>';
+            require_once('login.php');
         }
         
     } else {
